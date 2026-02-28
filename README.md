@@ -24,11 +24,11 @@ with manager['session name'] as session:
     pass
 ```
 
-Now, this is hiw we loop and read + update all existing sessions one by one:
+Now, this is how we loop and read + update all existing sessions one by one:
 
 ```python
 for session_name in manager.list_sessions():  # list all sessions by names
-    with manager[session_name] as session:  # open sessions to read and write as dictionary
+    with manager[session_name] as session:  # open sessions to read and write as dict
         print(session_name, session)
         session['update'] = 'new value'  # update any value
         session['nonce'] = 15556.22  # all JSON valid types are supported
@@ -40,10 +40,10 @@ for session_name in manager.list_sessions():  # list all sessions by names
 
 ## Use Un-Encrypted
 
-To make `ServerSideSession` saves sessions to disk in a JSON format, specify argument `unencrypted=True` at initialization:
+To make `ServerSideSession` saves sessions to disk in a JSON format, specify argument `unencrypt=True` at initialization:
 
 ```python
-manager = ServerSideSession(unencrypt=1)
+manager = ServerSideSession(unencrypt=True)
 ```
 
 ## Check and Delete Sessions
