@@ -1,6 +1,6 @@
 # Server Side Sessions
 
-Lets You deal with session is `dict` format, and it handles **Creation**, **Encryption**, **Reading**, **Updating** and **Deletion** of Sessions in the Server Side.  
+Lets You deal with session in `dict` format, and it handles **Creation**, **Encryption**, **Reading**, **Updating** and **Deletion** of Sessions in the Server Side.  
 Saves each session as one file.
 
 You can choose your master key, and the directory where to save session files, you can also choose to save session unencrypted.

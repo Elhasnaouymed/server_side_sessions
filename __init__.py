@@ -250,6 +250,9 @@ class ServerSideSession:
         session = self._read_session(name)  # read the session (can return None)
         session = {} if session is None else session  # create a dictionary if the session is new
         yield session  # return it
+        # > next code ignores empty new sessions, they aren't exist anyway and shouldn't be as they are empty sessions
+        if not self.exists(name) and not session:
+            return
         if not self._write_session(name, session):  # write the changes
             raise errors.ServerSideSessionWriteError()
         # * Note: we always write to disk even if the session is not updated, for simplicity for now,
